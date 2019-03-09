@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "code": "001",
+        "name": "Employee 1",
+        "totaleffort": 55,
+        "averageeffort" : 60
+    },
+    {
+        "id": 2,
+        "code": "001",
+        "name": "Employee 2",
+        "totaleffort": 55,
+        "averageeffort" : 60
+    },
+    {
+        "id": 3,
+        "code": "003",
+        "name": "Employee 3",
+        "totaleffort": 55,
+        "averageeffort" : 60
+    },
+    {
+        "id": 4,
+        "code": "004",
+        "name": "Employee 4",
+        "totaleffort": 55,
+        "averageeffort" : 60
+    }
+]

@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+div.card-header {
+ font-size: large;
+}
+
+div.card {
+  margin-top: 10px
+}
+
+.table {
+  margin-top: 10px
+}
+
+.nav-link {
+  font-size: large;
+}
+
+div.ta-right {
+  text-align: right;
+}

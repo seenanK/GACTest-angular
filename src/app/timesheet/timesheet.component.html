@@ -1,0 +1,70 @@
+<div class='card'>
+  <div class='card-header'>
+    <div class="row">
+        <div class='col-md-6'>
+            Time Sheet
+        </div>
+        <div class='col-md-6 ta-right'>
+            <a class='nav-link' [routerLink]="['/employeehours']">Add Working Hours</a>
+        </div>
+    </div>
+  </div>
+  <div class='card-body'>
+    <div class='row'>
+      <div class='col-md-6'>
+          Employees:
+          <select class="form-control" [(ngModel)]="selectedempid" (ngModelChange)="selectEmployee()">
+              <option *ngFor="let employee of employees" [value]="employee.id">
+                {{employee.name}}
+              </option>
+            </select>
+      </div> 
+      <div class="col-md-6">
+          Select Week:
+          <input [(ngModel)]="selecteddate"
+          (ngModelChange)="selectEmployee()"
+          class="form-control"
+          placeholder="select week"
+          bsDatepicker
+          [bsConfig]="{ selectWeek: true}">
+      </div>             
+    </div>
+    <br />
+    <div class='table-responsive'>
+      <table class='table'
+             *ngIf='timesheets && timesheets.length'>
+        <thead>
+          <tr>            
+            <th>Task</th>
+            <th>Sunday</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let timesheet of timesheets'>
+            <td>{{ timesheet.task }}</td>
+            <td>{{ timesheet.sunday }}</td>
+            <td>{{ timesheet.monday }}</td>
+            <td>{{ timesheet.tuesday }}</td>
+            <td>{{ timesheet.wednesday }}</td>
+            <td>{{ timesheet.thursday }}</td>
+            <td>{{ timesheet.friday }}</td>
+            <td>{{ timesheet.saturday }}</td>            
+          </tr>
+          <tr *ngIf="!timesheets.length">
+              <td colspan="8">No record found!</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div *ngIf='errorMessage'
+     class='alert alert-danger'>
+  Error: {{ errorMessage }}
+</div>
